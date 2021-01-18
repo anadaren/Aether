@@ -1,0 +1,2 @@
+# aether
+Interactive discord bot
