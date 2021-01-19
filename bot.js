@@ -75,4 +75,4 @@ client.on('message', message => {
 });
 
 // Log the bot in using it's token
-client.login("NzMxNzQ1NTc0ODk4MTA2MzY4.Xwqhfg.4H4L3qx-uj-AVFMDrA0EtTOrzP4");
+client.login(/*insert token*/);
