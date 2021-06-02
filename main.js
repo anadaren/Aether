@@ -9,6 +9,8 @@
 const Discord = require('discord.js');
 // Create an instance of a Discord client
 const client = new Discord.Client();
+// Reqires file with login token
+//const config = require('./config.json')
 // Recognizes command prefixes that will be used to call the bot
 const PREFIX = "a!";
 
@@ -50,22 +52,24 @@ client.on('message', message => {
 	}
 
     // Checks if anyone is referring to them without talking to them directly
-    if(message.content.toLowerCase().includes('aether'))
-    {
+    if(message.content.toLowerCase().includes('aether')){
+        //Says hello
+        if(message.content === "hi Aether"){
+                message.channel.send("Don't talk to me");
+        }
+    }
+    else{
         message.channel.send("Don't refer to me");
     }
-	/*Active Commands*/
 
-	//Says hello
-	if(message.content === "hi Aether"){
-		message.channel.send("Don't talk to me");
-		//message.reply("Reply");
-        // ^^^Replies @ the original sender
-	}
+
+    /*Active Commands*/
 		
 	// Says hello, but this time Aether is much nicer because you did it right
 	if(isValidCommand(message, "hello")){
 		message.reply("Hello");
+        //message.reply("Reply");
+        // ^^^Replies @ the original sender
 	}
 		
     // Prints your user ID
