@@ -9,8 +9,6 @@
 const Discord = require('discord.js');
 // Create an instance of a Discord client
 const client = new Discord.Client();
-// Reqires file with login token
-const config = require('./config.json')
 // Recognizes command prefixes that will be used to call the bot
 const PREFIX = "a!";
 
@@ -125,4 +123,4 @@ client.on('message', message => {
 });
 
 // Log the bot in using it's token
-client.login(config.token);
+client.login(process.env.DiscordJS_Token);
