@@ -1,9 +1,11 @@
+// All responses that Aether responds to that do not start with the a! prefix
+
 module.exports = function (message, args) {
 
     // Checks if anyone is referring to them without talking to them directly
     if(message.content.toLowerCase().includes("aether")){
         //Says hello
-        if(message.content === "hi Aether"){
+        if(message.content == "hi Aether"){
                 message.channel.send("Don't talk to me");
         }
         else{

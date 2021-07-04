@@ -10,7 +10,7 @@ const client = new Discord.Client();
 // Requires configuration file
 const config = require("./config.json")
 // Reqires file with login token, comment out before posting anywhere
-require("dotenv").config();
+//require("dotenv").config();
 
 
 // Prints to console when first online
