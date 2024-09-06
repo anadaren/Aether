@@ -1,17 +1,19 @@
+
+
 // Requires prefix from config.json file
-//const prefix = require('./config.json');
+const prefix = require('../config.json');
 
 // Responses to messages that don't begin with the a! prefix
-const responses = require("./commands/responses.js");
+const responses = require("../commands/responses.js");
 
 // Dice rolls
-const roll = require("./commands/roll.js");
+const roll = require("../commands/roll.js");
 
 // 8-ball feature
-const eightball = require("./commands/eightball.js");
+const eightball = require("../commands/eightball.js");
 
 // Music commands
-const music = require("./commands/music.js");
+const music = require("../commands/music.js");
 
 // Server related commands
 //const serverCmds = require("./commands/serverCmds.js");
@@ -42,9 +44,13 @@ const commandLookup = {
 ];*/
 
 
+
+
 module.exports = async function (message){
     // Keeps itself (or any other bot) from saying something that will call itself
 	if(message.author.bot) return;
+
+    console.log("Commands are go");
 
     /* How the bot handles commands being said in the chat*/
 

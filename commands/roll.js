@@ -18,7 +18,7 @@ module.exports = function (message, args) {
             if(dice[3] >= '0' && dice[3] <= '9') {
                 // If a 2 digit number is detected, then characters are joined
                 dieRoll = "" + dice[2] + dice[3];
-            } elseif(dice[3] == '+'){
+            } else if(dice[3] == '+') {
                 // Adds in any additional modifiers
                 if (dice[4] >= '0' && dice[4] <= '9') {
                     result = result + dice[4];
@@ -26,10 +26,10 @@ module.exports = function (message, args) {
             }
         }
 
-        for(for i=0; i<dice[0]; i++){
+        for(i=0; i<dice[0]; i++){
             result = result + Math.floor(Math.random() * dieRoll) + 1;
         }
-        if()
+
         message.reply("rolled a " + result);
 
     } else{
