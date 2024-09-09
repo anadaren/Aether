@@ -1,36 +1,43 @@
 // Registering Slash Commands
 
-// ReadableStream
-global.ReadableStream = require('web-streams-polyfill').ReadableStream;
-
 // Dependancies
 require('dotenv').config();
+global.ReadableStream = require('web-streams-polyfill').ReadableStream;
 const { REST, Routes, ApplicationCommandOptionType } = require('discord.js');
 
+// Slash Commands
 const commands = [
     {
         name: 'hi',
         description: 'Replies with hello there',
     },
     {
-        name: 'add',
-        description: 'Adds two numbers',
+        name: '8-ball',
+        description: 'Asks the magic 8-ball a question',
         options: [
             {
-                name: 'first-number',
-                description: 'The first number',
-                type: ApplicationCommandOptionType.Number,
+                name: 'question',
+                description: 'The question',
+                type: ApplicationCommandOptionType.String,
                 required: true,
-            },
+            }
+        ]
+    },
+    {
+        name: 'roll',
+        description: 'Rolls a die',
+        options: [
             {
-                name: 'second-number',
-                description: 'The second number',
-                type: ApplicationCommandOptionType.Number,
-                required: true,
-            },
+                name: 'die',
+                description: 'Which type of die to roll',
+                type: ApplicationCommandOptionType.String,
+                required: false,
+            }
         ]
     }
 ];
+
+// Registers commands into slash command menu
 
 const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
 

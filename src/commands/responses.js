@@ -1,26 +1,26 @@
-// All responses that Aether responds to that do not start with the a! prefix
+// All responses that aren't prompted with the a! prefix
 
 module.exports = function (message, args) {
 
     // Checks if anyone is referring to them without talking to them directly
     if(message.content.toLowerCase().includes("aether")){
         //Says hello
-        if(message.content == "hi Aether"){
-                message.channel.send("Don't talk to me");
+        if(message.content.toLowerCase() == "hi aether"){
+                message.reply("Don't talk to me.");
         }
         else{
-            message.channel.send("Don't refer to me");
+            message.reply("Don't talk about me.");
         }
     }  
 
-    // Flags users for slurs/other blacklisted words
+    // Flags users using blacklisted words
     // Deletes the offending message, lets user off with an (aggressive) warning
     let blacklisted = [/*put in blacklisted words*/];
     for(var i in blacklisted){
         if(message.content.toLowerCase().includes(blacklisted[i]))
         {
             message.delete();
-            message.reply("Don't say that, asshole");
+            message.reply("Don't say that.");
         }
     }
 
